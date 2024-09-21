@@ -37,9 +37,6 @@ export const metadata: Metadata = {
     title: "MithrilAI",
     card: "summary_large_image",
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
