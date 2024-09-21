@@ -139,6 +139,15 @@ export function Navbar() {
                   <h2>LINKEDIN</h2>
                 </a>
                 <a
+                  href="https://www.instagram.com/mithrilai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-gray-300 flex gap-2"
+                >
+                  <span className="text-[#787878]">\</span>
+                  <h2>INSTAGRAM</h2>
+                </a>
+                <a
                   href="mailto:info.mithrilai@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
