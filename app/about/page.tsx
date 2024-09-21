@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "About Mithril AI",
+};
+
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center h-[82vh] text-center px-4">
