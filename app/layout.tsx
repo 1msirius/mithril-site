@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { Animation } from "@/components/animation";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mithrilai.vercel.app/"),
+  metadataBase: new URL("https://mithrilai.xyz"),
   title: {
     default: "Mithril AI",
     template: `%s | Mithril AI`,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     images: "/opengraph.png",
     title: "Mithril AI",
     description: "Open Science AI Research Lab",
-    url: "https://mithrilai.vercel.app/",
+    url: "https://mithrilai.xyz",
     siteName: "Mithril AI",
     locale: "en_US",
     type: "website",
@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   twitter: {
     title: "MithrilAI",
     card: "summary_large_image",
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
