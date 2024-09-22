@@ -103,6 +103,15 @@ export function Navbar() {
                   <h2>HUGGING FACE</h2>
                 </a>
                 <a
+                  href="https://twitter.com/mithrilailabs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-gray-300 flex gap-2"
+                >
+                  <span className="text-[#787878]">\</span>
+                  <h2>TWITTER</h2>
+                </a>
+                <a
                   href="https://github.com/mithrilai"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -119,15 +128,6 @@ export function Navbar() {
                 >
                   <span className="text-[#787878]">\</span>
                   <h2>DISCORD</h2>
-                </a>
-                <a
-                  href="https://twitter.com/mithrilailabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm hover:text-gray-300 flex gap-2"
-                >
-                  <span className="text-[#787878]">\</span>
-                  <h2>TWITTER</h2>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/mithril-ai/"
@@ -150,7 +150,7 @@ export function Navbar() {
               </div>
               <div className="text-sm flex flex-col space-y-4">
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  <button className="bg-white text-black px-6 py-2 text-sm rounded-full hover:bg-gray-200 transition-colors">
+                  <button className="bg-white text-black px-6 py-2 text-sm font-medium rounded-full hover:bg-gray-200 transition-colors">
                     JOIN US
                   </button>
                 </a>
@@ -159,7 +159,7 @@ export function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="bg-black text-[#EDEDED] border border-solid border-[#2B2B2B] px-6 py-2 rounded-full hover:bg-[#111111] transition-colors">
+                  <button className="bg-black text-[#EDEDED] text-sm font-medium border border-solid border-[#2B2B2B] px-6 py-2 rounded-full hover:bg-[#111111] transition-colors">
                     CONTACT
                   </button>
                 </a>
