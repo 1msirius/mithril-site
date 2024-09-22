@@ -65,8 +65,7 @@ export function Navbar() {
                   alt="Mithril AI Logo"
                   width={28}
                   height={28}
-                  priority
-                  unoptimized
+                  priority 
                 />
               </SheetTitle>
             </SheetHeader>
