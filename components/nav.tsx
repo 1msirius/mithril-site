@@ -11,6 +11,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import Logo from "@/public/logo.png";
 
 export function Navbar() {
   return (
@@ -18,7 +19,7 @@ export function Navbar() {
       <div className="flex items-center">
         <a href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src={Logo}
             alt="Mithril AI Logo"
             className="pb-[2px]"
             width={34}
@@ -60,7 +61,7 @@ export function Navbar() {
             <SheetHeader>
               <SheetTitle className="pl-1">
                 <Image
-                  src="/logo.png"
+                  src={Logo}
                   alt="Mithril AI Logo"
                   width={28}
                   height={28}
