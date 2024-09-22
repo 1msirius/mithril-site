@@ -24,15 +24,6 @@ export function Footer() {
         >
           GITHUB
         </a>
-        {/* <span className="text-[#787878]">/</span>
-        <a
-          href="https://hf.co/mithrilai"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-gray-300"
-        >
-          HF
-        </a> */}
         <span className="text-[#787878]">/</span>
         <a
           href="https://discord.gg/jgy376Jyka"
