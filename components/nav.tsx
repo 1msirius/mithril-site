@@ -31,21 +31,16 @@ export function Navbar() {
       </div>
       <div className="flex items-center space-x-4 text-xs font-normal tracking-wider">
         <div className="hidden md:flex space-x-4">
+          <a href="/research" className="hover:text-gray-300">
+            RESEARCH
+          </a>
+          <span className="text-[#787878]">/</span>
           <a href="/blog" className="hover:text-gray-300">
             BLOG
           </a>
           <span className="text-[#787878]">/</span>
           <a href="/about" className="hover:text-gray-300">
             ABOUT
-          </a>
-          <span className="text-[#787878]">/</span>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-300"
-          >
-            CAREERS
           </a>
         </div>
         <span className="text-[#787878] hidden md:inline">/</span>
@@ -60,14 +55,26 @@ export function Navbar() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent className="border-l border-[#2B2B2B] bg-black w-[250px] sm:w-[300px]">
+          <SheetContent className="border-l border-[#222222] bg-black w-[250px] sm:w-[300px]">
             <SheetHeader>
-              <SheetTitle className="text-left tracking-widest font-medium">
-                MITHRIL
+              <SheetTitle className="pl-1">
+                <Image
+                  src="/logo.png"
+                  alt="Mithril AI Logo"
+                  width={28}
+                  height={28}
+                />
               </SheetTitle>
             </SheetHeader>
-            <nav className="mt-6 flex flex-col gap-8 font-[family-name:var(--font-geist-mono)]">
+            <nav className="mt-10 flex flex-col gap-10 font-[family-name:var(--font-geist-mono)]">
               <div className="space-y-4">
+                <a
+                  href="/research"
+                  className="text-sm hover:text-gray-300 flex gap-2"
+                >
+                  <span className="text-[#787878]">/</span>
+                  <h2>RESEARCH</h2>
+                </a>
                 <a
                   href="/blog"
                   className="text-sm hover:text-gray-300 flex gap-2"
@@ -82,34 +89,25 @@ export function Navbar() {
                   <span className="text-[#787878]">/</span>
                   <h2>ABOUT</h2>
                 </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm hover:text-gray-300 flex gap-2"
-                >
-                  <span className="text-[#787878]">/</span>
-                  <h2>CAREERS</h2>
-                </a>
               </div>
               <div className="space-y-4">
                 <a
-                  href="https://twitter.com/mithrilailabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm hover:text-gray-300 flex gap-2"
-                >
-                  <span className="text-[#787878]">\</span>
-                  <h2>TWITTER</h2>
-                </a>
-                <a
-                  href="https://hf.co/mithrilai"
+                  href="https://huggingface.co/mithrilai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm hover:text-gray-300 flex gap-2"
                 >
                   <span className="text-[#787878]">\</span>
                   <h2>HUGGING FACE</h2>
+                </a>
+                <a
+                  href="https://github.com/mithrilai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-gray-300 flex gap-2"
+                >
+                  <span className="text-[#787878]">\</span>
+                  <h2>GITHUB</h2>
                 </a>
                 <a
                   href="https://discord.gg/jgy376Jyka"
@@ -121,13 +119,13 @@ export function Navbar() {
                   <h2>DISCORD</h2>
                 </a>
                 <a
-                  href="https://github.com/mithrilai"
+                  href="https://twitter.com/mithrilailabs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm hover:text-gray-300 flex gap-2"
                 >
                   <span className="text-[#787878]">\</span>
-                  <h2>GITHUB</h2>
+                  <h2>TWITTER</h2>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/mithril-ai/"
@@ -147,14 +145,21 @@ export function Navbar() {
                   <span className="text-[#787878]">\</span>
                   <h2>INSTAGRAM</h2>
                 </a>
+              </div>
+              <div className="text-sm flex flex-col space-y-4">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-white text-black px-6 py-2 text-sm rounded-full hover:bg-gray-200 transition-colors">
+                    JOIN US
+                  </button>
+                </a>
                 <a
                   href="mailto:info.mithrilai@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm hover:text-gray-300 flex gap-2"
                 >
-                  <span className="text-[#787878]">\</span>
-                  <h2>EMAIL</h2>
+                  <button className="bg-black text-[#EDEDED] border border-solid border-[#2B2B2B] px-6 py-2 rounded-full hover:bg-[#111111] transition-colors">
+                    CONTACT
+                  </button>
                 </a>
               </div>
             </nav>
