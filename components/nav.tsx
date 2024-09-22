@@ -23,6 +23,7 @@ export function Navbar() {
             className="pb-[2px]"
             width={34}
             height={34}
+            priority
           />
           <h1 className="text-[28px] font-medium ml-2 tracking-widest">
             MITHRIL
@@ -63,6 +64,7 @@ export function Navbar() {
                   alt="Mithril AI Logo"
                   width={28}
                   height={28}
+                  priority
                 />
               </SheetTitle>
             </SheetHeader>
