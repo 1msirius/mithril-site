@@ -1,86 +1,93 @@
 "use client";
-import { useEffect, useRef } from "react";
-import * as THREE from "three";
+import React, { useEffect, useMemo, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { type Container, type ISourceOptions } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
 
-export function Animation() {
-  const mountRef = useRef<HTMLDivElement | null>(null);
+interface AnimationProps {
+  id: string;
+}
+
+export const Animation: React.FC<AnimationProps> = (props) => {
+  const [init, setInit] = useState(false);
 
   useEffect(() => {
-    const mount = mountRef.current;
-    if (mount) {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      );
-      camera.position.z = 5;
-
-      const renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      mount.appendChild(renderer.domElement);
-
-      // Create a circular texture
-      const canvas = document.createElement("canvas");
-      canvas.width = 32;
-      canvas.height = 32;
-      const ctx = canvas.getContext("2d");
-      if (ctx) {
-        const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-        gradient.addColorStop(0, "rgba(255,255,255,1)");
-        gradient.addColorStop(1, "rgba(255,255,255,0)");
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, 32, 32);
-      }
-      const texture = new THREE.CanvasTexture(canvas);
-
-      const particleCount = 1000;
-      const particlesGeometry = new THREE.BufferGeometry();
-      const positions = new Float32Array(particleCount * 3);
-      for (let i = 0; i < particleCount * 3; i++) {
-        positions[i] = (Math.random() - 0.5) * 10;
-      }
-      particlesGeometry.setAttribute(
-        "position",
-        new THREE.BufferAttribute(positions, 3)
-      );
-
-      const particleMaterial = new THREE.PointsMaterial({
-        color: 0x888888,
-        size: 0.05,
-        map: texture,
-        transparent: true,
-        blending: THREE.AdditiveBlending,
-      });
-
-      const particleSystem = new THREE.Points(
-        particlesGeometry,
-        particleMaterial
-      );
-      scene.add(particleSystem);
-
-      const animate = () => {
-        requestAnimationFrame(animate);
-        particleSystem.rotation.y += 0.001;
-        renderer.render(scene, camera);
-      };
-      animate();
-
-      const handleResize = () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      };
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        if (mount) mount.removeChild(renderer.domElement);
-        window.removeEventListener("resize", handleResize);
-      };
-    }
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  return <div ref={mountRef} style={{ width: "100%", height: "100vh" }}></div>;
-}
+  const particlesLoaded = async (container?: Container): Promise<void> => {
+    console.log(container);
+  };
+
+  const options: ISourceOptions = useMemo(
+    () => ({
+      background: {
+        color: "#000",
+      },
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
+      interactivity: {
+        events: {
+          onClick: {
+            enable: true,
+            mode: "push",
+          },
+          onHover: {
+            enable: true,
+            mode: "repulse",
+          },
+        },
+        modes: {
+          push: {
+            quantity: 1,
+          },
+          repulse: {
+            distance: 0,
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: "#404040",
+        },
+        links: {
+          color: "#404040",
+          enable: true,
+          distance: 300,
+        },
+        move: {
+          enable: true,
+          speed: { min: 0.2, max: 0.5 },
+        },
+        number: {
+          value: 100,
+        },
+        opacity: {
+          value: { min: 0.3, max: 0.7 },
+        },
+        size: {
+          value: { min: 1, max: 3 },
+        },
+      },
+    }),
+    []
+  );
+
+  if (init) {
+    return (
+      <Particles
+        id={props.id}
+        particlesLoaded={particlesLoaded}
+        options={options}
+      />
+    );
+  }
+
+  return <></>;
+};
