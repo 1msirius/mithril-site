@@ -10,6 +10,7 @@ interface AnimationProps {
 
 export const Animation: React.FC<AnimationProps> = (props) => {
   const [init, setInit] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -17,6 +18,16 @@ export const Animation: React.FC<AnimationProps> = (props) => {
     }).then(() => {
       setInit(true);
     });
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
@@ -63,10 +74,10 @@ export const Animation: React.FC<AnimationProps> = (props) => {
         },
         move: {
           enable: true,
-          speed: { min: 0.2, max: 0.4 },
+          speed: { min: 0.2, max: 0.5 },
         },
         number: {
-          value: 120,
+          value: windowWidth < 768 ? 45 : 115,
         },
         opacity: {
           value: { min: 0.3, max: 0.7 },
@@ -76,18 +87,18 @@ export const Animation: React.FC<AnimationProps> = (props) => {
         },
       },
     }),
-    []
+    [windowWidth]
   );
 
-  if (init) {
-    return (
-      <Particles
-        id={props.id}
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
-    );
+  if (typeof window === 'undefined' || !init) {
+    return null;
   }
 
-  return <></>;
+  return (
+    <Particles
+      id={props.id}
+      particlesLoaded={particlesLoaded}
+      options={options}
+    />
+  );
 };
