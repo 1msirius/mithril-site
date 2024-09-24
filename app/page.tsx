@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-[82vh] text-center px-4">
+    <div className="flex flex-col items-center justify-center h-[83vh] text-center px-4">
       <h1 className="text-3xl md:text-5xl mb-8">
         Open Science AI Research Lab
       </h1>
