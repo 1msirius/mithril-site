@@ -68,10 +68,10 @@ export const Animation: React.FC<AnimationProps> = (props) => {
       },
       particles: {
         color: {
-          value: "#454545",
+          value: "#3C3D37",
         },
         links: {
-          color: "#454545",
+          color: "#3C3D37",
           enable: true,
           distance: 300,
         },
