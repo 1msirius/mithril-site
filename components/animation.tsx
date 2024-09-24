@@ -10,7 +10,9 @@ interface AnimationProps {
 
 export const Animation: React.FC<AnimationProps> = (props) => {
   const [init, setInit] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -23,10 +25,10 @@ export const Animation: React.FC<AnimationProps> = (props) => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -43,6 +45,7 @@ export const Animation: React.FC<AnimationProps> = (props) => {
         enable: true,
         zIndex: -10,
       },
+      fpsLimit: 120,
       interactivity: {
         events: {
           onClick: {
@@ -56,7 +59,7 @@ export const Animation: React.FC<AnimationProps> = (props) => {
         },
         modes: {
           push: {
-            quantity: 1,
+            quantity: 0,
           },
           repulse: {
             distance: 0,
@@ -65,10 +68,10 @@ export const Animation: React.FC<AnimationProps> = (props) => {
       },
       particles: {
         color: {
-          value: "#404040",
+          value: "#454545",
         },
         links: {
-          color: "#505050",
+          color: "#454545",
           enable: true,
           distance: 300,
         },
@@ -77,7 +80,7 @@ export const Animation: React.FC<AnimationProps> = (props) => {
           speed: { min: 0.2, max: 0.5 },
         },
         number: {
-          value: windowWidth < 768 ? 40 : 110,
+          value: windowWidth < 768 ? 40 : 100,
         },
         opacity: {
           value: { min: 0.3, max: 0.7 },
@@ -90,7 +93,7 @@ export const Animation: React.FC<AnimationProps> = (props) => {
     [windowWidth]
   );
 
-  if (typeof window === 'undefined' || !init) {
+  if (typeof window === "undefined" || !init) {
     return null;
   }
 
