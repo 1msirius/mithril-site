@@ -30,7 +30,7 @@ export const Animation: React.FC<AnimationProps> = (props) => {
       },
       fullScreen: {
         enable: true,
-        zIndex: -1,
+        zIndex: -10,
       },
       interactivity: {
         events: {
@@ -57,16 +57,16 @@ export const Animation: React.FC<AnimationProps> = (props) => {
           value: "#404040",
         },
         links: {
-          color: "#404040",
+          color: "#505050",
           enable: true,
           distance: 300,
         },
         move: {
           enable: true,
-          speed: { min: 0.2, max: 0.5 },
+          speed: { min: 0.2, max: 0.4 },
         },
         number: {
-          value: 100,
+          value: 120,
         },
         opacity: {
           value: { min: 0.3, max: 0.7 },
