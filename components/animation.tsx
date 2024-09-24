@@ -77,7 +77,7 @@ export const Animation: React.FC<AnimationProps> = (props) => {
           speed: { min: 0.2, max: 0.5 },
         },
         number: {
-          value: windowWidth < 768 ? 45 : 115,
+          value: windowWidth < 768 ? 40 : 110,
         },
         opacity: {
           value: { min: 0.3, max: 0.7 },
