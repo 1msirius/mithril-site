@@ -22,11 +22,11 @@ export function Navbar() {
             src={Logo}
             alt="Mithril AI Logo"
             className="pb-[2px]"
-            width={34}
-            height={34}
+            width={36}
+            height={36}
             priority
           />
-          <h1 className="text-[28px] font-medium ml-2 tracking-widest">
+          <h1 className="text-3xl font-medium ml-2 tracking-widest">
             MITHRIL
           </h1>
         </a>
