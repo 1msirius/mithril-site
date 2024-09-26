@@ -4,7 +4,7 @@ export default function Home() {
       <h1 className="text-3xl md:text-5xl mb-8">
         Open Science AI Research Lab
       </h1>
-      <p className="text-lg mb-8 max-w-sm font-[family-name:var(--font-geist-mono)]">
+      <p className="text-lg mb-8 max-w-sm jet-brains">
         Open models across diverse domains, for everyone, everywhere.
       </p>
       <div className="flex gap-4 items-center">
