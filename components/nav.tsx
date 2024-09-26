@@ -26,9 +26,7 @@ export function Navbar() {
             height={36}
             priority
           />
-          <h1 className="text-3xl font-medium ml-2 tracking-widest">
-            MITHRIL
-          </h1>
+          <h1 className="text-3xl font-medium ml-2 tracking-widest">MITHRIL</h1>
         </a>
       </div>
       <div className="flex items-center space-x-4 text-xs font-normal tracking-wider">
@@ -65,11 +63,11 @@ export function Navbar() {
                   alt="Mithril AI Logo"
                   width={28}
                   height={28}
-                  priority 
+                  priority
                 />
               </SheetTitle>
             </SheetHeader>
-            <nav className="mt-10 flex flex-col gap-10 font-[family-name:var(--font-geist-mono)]">
+            <nav className="mt-10 flex flex-col gap-10 jet-brains">
               <div className="space-y-4">
                 <a
                   href="/research"
