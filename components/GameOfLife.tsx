@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 const GameOfLife = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const cellSize = 14;
+  const cellSize = 16;
   const createEmptyGrid = (rows: number, cols: number) => {
     return new Array(rows).fill(null).map(() => new Array(cols).fill(0));
   };
@@ -53,7 +53,7 @@ const GameOfLife = () => {
     context.clearRect(0, 0, cols * cellSize, rows * cellSize);
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
-        context.fillStyle = grid[row][col] ? "#171717" : "#000000";
+        context.fillStyle = grid[row][col] ? "#121212" : "#000000";
         context.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
       }
     }

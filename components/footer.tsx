@@ -15,7 +15,7 @@ export function Footer() {
         >
           X
         </a>
-        <span className="text-[#787878]">/</span>
+        <span className="text-[#676767]">/</span>
         <a
           href="https://github.com/mithrilai"
           target="_blank"
@@ -24,7 +24,7 @@ export function Footer() {
         >
           GITHUB
         </a>
-        <span className="text-[#787878]">/</span>
+        <span className="text-[#676767]">/</span>
         <a
           href="https://discord.gg/jgy376Jyka"
           target="_blank"
@@ -33,7 +33,7 @@ export function Footer() {
         >
           DISCORD
         </a>
-        <span className="text-[#787878]">/</span>
+        <span className="text-[#676767]">/</span>
         <a
           href="mailto:info.mithrilai@gmail.com"
           target="_blank"
