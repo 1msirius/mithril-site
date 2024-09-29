@@ -4,6 +4,8 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { Navbar } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import Image from "next/image";
+import Logo from "@/public/outline-logo.svg";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mithrilai.xyz"),
@@ -52,18 +54,14 @@ export default function RootLayout({
         <div className="px-8 py-4 md:px-16 md:py-10">
           <Navbar />
           <div className="absolute right-0 bottom-0 -z-10">
-            <svg
-              width="800"
-              height="550"
-              viewBox="0 0 902 703"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M255.687 497.711L179.181 702H1L263.098 2.12392L525.372 702H347.211L270.654 497.709L263.169 477.731L255.687 497.711ZM550.422 240.857L638.674 2L901 702H722.93L550.422 240.857Z"
-                stroke="#2B2B2B"
-              />
-            </svg>
+          <Image
+            src={Logo}
+            alt="Mithril AI Logo"
+            className="mr-16"
+            width={800}
+            height={600}
+            priority
+          />
           </div>
           {children}
           <Footer />

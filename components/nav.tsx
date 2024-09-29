@@ -11,7 +11,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/logo.svg";
 
 export function Navbar() {
   return (
