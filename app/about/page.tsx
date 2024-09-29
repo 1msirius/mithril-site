@@ -11,8 +11,9 @@ export default function About() {
       <h1 className="text-4xl md:text-5xl mb-8">About</h1>
       <p className="text-lg mb-8 w-full max-w-[700px]">
         We are an open-source AI research and deployment company. Our mission is
-        to democratize AI by becoming the 'Linux of AI', making everything—from
-        model weights to data pipelines—fully open and accessible to everyone.
+        to democratize AI by becoming the &apos;Linux of AI&apos;, making
+        everything—from model weights to data pipelines—fully open and
+        accessible to everyone.
       </p>
       <div className="flex gap-4 items-center">
         <a href="https://github.com/mithrilai">
