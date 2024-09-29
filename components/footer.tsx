@@ -28,6 +28,15 @@ export function Footer() {
         </a>
         <span className="text-[#505050]">/</span>
         <a
+          href="https://huggingface.co/mithrilai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-300"
+        >
+          HF
+        </a>
+        <span className="text-[#505050]">/</span>
+        <a
           href="https://discord.gg/jgy376Jyka"
           target="_blank"
           rel="noopener noreferrer"
