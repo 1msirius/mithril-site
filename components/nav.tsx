@@ -102,7 +102,7 @@ export function Navbar() {
                   <h2>HUGGING FACE</h2>
                 </a>
                 <a
-                  href="https://twitter.com/mithrilailabs"
+                  href="https://x.com/MithrilAI_"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm hover:text-gray-300 flex gap-2"

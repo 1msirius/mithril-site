@@ -10,7 +10,7 @@ export function Footer() {
       </div>
       <div className="flex flex-wrap space-x-4 text-[10px] md:text-xs font-normal tracking-wider">
         <a
-          href="https://twitter.com/mithrilailabs"
+          href="https://x.com/MithrilAI_"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-gray-300"
